@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#062d23">
+<title>iGreen Energy Brasil | Seja um Licenciado</title>
+<meta name="description" content="Conheça a oportunidade de empreender com a iGreen Energy Brasil.">
+
+<style>
+:root{
+ --dark:#062d23;
+ --green:#087849;
+ --lime:#b6df55;
+ --gold:#c9aa68;
+ --light:#f3f7f3;
+ --text:#34443b;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:Arial,sans-serif;color:var(--text);line-height:1.65}
+.container{width:92%;max-width:1160px;margin:auto}
+a{text-decoration:none}
+header{position:sticky;top:0;background:white;z-index:50;box-shadow:0 3px 18px #0001}
+.nav{min-height:76px;display:flex;justify-content:space-between;align-items:center;gap:15px}
+.logo{font-size:26px;font-weight:800;color:var(--dark)}
+.logo span{color:var(--green)}
+nav{display:flex;gap:22px}
+nav a{color:var(--dark);font-size:14px;font-weight:bold}
+.btn{display:inline-block;background:var(--lime);color:var(--dark);font-weight:bold;padding:14px 23px;border-radius:7px;transition:.25s}
+.btn:hover{transform:translateY(-3px);box-shadow:0 8px 20px #0002}
+
+.hero{
+ min-height:650px;display:flex;align-items:center;color:white;
+ background:linear-gradient(90deg,#03281ff0,#073b2caa,#073b2c35),
+ url('https://images.unsplash.com/photo-1509391366360-2e959784a276?auto=format&fit=crop&w=1900&q=85') center/cover;
+}
+.hero-content{max-width:730px;padding:95px 0}
+.eyebrow{color:var(--gold);font-size:13px;font-weight:bold;letter-spacing:2px;text-transform:uppercase}
+.hero h1{font-size:clamp(40px,6vw,68px);line-height:1.08;margin:22px 0}
+.hero p{font-size:19px;max-width:650px;margin-bottom:30px;color:#e8eee9}
+
+section{padding:85px 0}
+.section-title{text-align:center;max-width:780px;margin:0 auto 45px}
+.section-title h2{font-size:clamp(29px,4vw,43px);color:var(--dark);line-height:1.2;margin:12px 0}
+.section-title p{color:#66766c}
+
+.intro{display:grid;grid-template-columns:1fr 1fr;gap:50px;align-items:center}
+.intro img{width:100%;height:410px;object-fit:cover;border-radius:15px}
+.intro h2{font-size:clamp(30px,4vw,42px);line-height:1.2;color:var(--dark);margin:15px 0}
+.intro p{margin-bottom:15px;color:#66766c}
+
+.light{background:var(--light)}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.card{background:white;border-radius:13px;overflow:hidden;box-shadow:0 10px 35px #073b2c12;transition:.3s}
+.card:hover{transform:translateY(-5px)}
+.card img{width:100%;height:220px;object-fit:cover;display:block}
+.card-content{padding:25px}
+.card h3{font-size:22px;color:var(--dark);margin-bottom:10px}
+.card p{font-size:15px;color:#66766c}
+
+.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+.step{padding:28px;border:1px solid #e1e9e2;border-radius:12px}
+.step strong{font-size:34px;color:var(--gold)}
+.step h3{color:var(--dark);margin:8px 0}
+.step p{font-size:15px;color:#66766c}
+
+.banner{background:linear-gradient(120deg,#062d23,#08784b);padding:70px 30px;border-radius:17px;text-align:center;color:white}
+.banner h2{font-size:clamp(29px,4vw,43px);margin:15px 0}
+.banner p{max-width:720px;margin:0 auto 25px;color:#e1eee6}
+
+.form-area{
+ max-width:720px;margin:auto;background:white;padding:38px;
+ border-radius:16px;box-shadow:0 10px 40px #073b2c15;
+}
+.form-area h2{color:var(--dark);font-size:30px;margin-bottom:8px}
+.form-area>p{color:#66766c;margin-bottom:25px}
+.field{margin-bottom:18px}
+.field label{display:block;font-weight:bold;font-size:14px;color:var(--dark);margin-bottom:6px}
+.field input,.field select{
+ width:100%;padding:14px;border:1px solid #d7e1d9;
+ border-radius:7px;font-size:15px;background:white;
+}
+.field input:focus,.field select:focus{outline:2px solid var(--green)}
+.consent{display:flex;gap:10px;align-items:flex-start;font-size:13px;color:#66766c;margin:20px 0}
+.consent input{margin-top:5px}
+.form-area button{width:100%;border:0;cursor:pointer;font-size:16px}
+.privacy{font-size:12px;color:#77847b;margin-top:14px}
+
+.profile{background:#edf3ed;text-align:center}
+.profile h2{font-size:32px;color:var(--dark)}
+.profile p{color:#66766c;margin:8px 0 22px}
+
+footer{background:#03271e;color:#dce8df;text-align:center;padding:40px 15px}
+footer strong{color:white;font-size:20px}
+footer p{font-size:13px;margin-top:9px}
+
+.whatsapp{
+ position:fixed;right:20px;bottom:20px;background:#20bd63;
+ color:white;padding:14px 20px;border-radius:40px;font-weight:bold;
+ z-index:100;box-shadow:0 5px 20px #0003;
+}
+
+@media(max-width:800px){
+ nav{display:none}
+ .grid,.steps,.intro{grid-template-columns:1fr}
+ section{padding:58px 0}
+ .hero{min-height:560px}
+ .hero-content{padding:75px 0}
+ .intro img{height:280px}
+ .form-area{padding:23px}
+}
+</style>
+</head>
+
+<body>
+
+<header>
+ <div class="container nav">
+  <div class="logo">iGreen <span>Energy</span></div>
+  <nav>
+   <a href="#inicio">Início</a>
+   <a href="#solucoes">Soluções</a>
+   <a href="#oportunidade">Oportunidade</a>
+   <a href="#cadastro">Cadastro</a>
+  </nav>
+  <a class="btn" href="#cadastro">Seja licenciado</a>
+ </div>
+</header>
+
+<main>
+
+<section class="hero" id="inicio">
+ <div class="container">
+  <div class="hero-content">
+   <div class="eyebrow">iGreen Energy Brasil</div>
+   <h1>Conecte seu talento a novas oportunidades.</h1>
+   <p>Conheça uma proposta de empreendedorismo que reúne soluções, serviços e possibilidades de desenvolvimento de negócios em diferentes segmentos.</p>
+   <a class="btn" href="#cadastro">QUERO CONHECER A OPORTUNIDADE</a>
+  </div>
+ </div>
+</section>
+
+<section>
+ <div class="container intro">
+  <div>
+   <div class="eyebrow">Empreendedorismo</div>
+   <h2>Construa seu próprio caminho como empreendedor.</h2>
+   <p>Conheça a oportunidade de atuar como licenciado iGreen Energy, desenvolvendo relacionamentos comerciais e apresentando soluções para clientes.</p>
+   <p>Você poderá conhecer a estrutura, a capacitação e o acompanhamento disponíveis para desenvolver sua atuação.</p>
+   <a class="btn" href="#cadastro">Quero saber mais</a>
+  </div>
+  <img src="https://images.unsplash.com/photo-1521737711867-e3b97375f902?auto=format&fit=crop&w=1100&q=85" alt="Equipe profissional reunida em escritório">
+ </div>
+</section>
+
+<section class="light" id="solucoes">
+ <div class="container">
+  <div class="section-title">
+   <div class="eyebrow">Nossas conexões</div>
+   <h2>Diferentes soluções. Novas possibilidades.</h2>
+   <p>Conheça alguns dos segmentos que fazem parte do universo de conexões iGreen.</p>
+  </div>
+
+  <div class="grid">
+   <article class="card">
+    <img src="https://images.unsplash.com/photo-1509391366360-2e959784a276?auto=format&fit=crop&w=900&q=85" alt="Fazenda solar">
+    <div class="card-content">
+     <h3>Conexão Green</h3>
+     <p>Soluções relacionadas à energia e oportunidade de desconto na fatura, conforme elegibilidade e regras aplicáveis.</p>
+    </div>
+   </article>
+
+   <article class="card">
+    <img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=900&q=85" alt="Tecnologia e telecomunicações">
+    <div class="card-content">
+     <h3>Conexão Telecom</h3>
+     <p>Conectividade e soluções de telecomunicações para pessoas e empresas.</p>
+    </div>
+   </article>
+
+   <article class="card">
+    <img src="https://images.unsplash.com/photo-1450101499163-c8848c66ca85?auto=format&fit=crop&w=900&q=85" alt="Consultoria e documentos">
+    <div class="card-content">
+     <h3>Conexão Seguros</h3>
+     <p>Soluções de proteção e serviços de seguros para diferentes necessidades.</p>
+    </div>
+   </article>
+  </div>
+ </div>
+</section>
+
+<section id="oportunidade">
+ <div class="container">
+  <div class="section-title">
+   <div class="eyebrow">Desenvolvimento profissional</div>
+   <h2>Comece conhecendo. Desenvolva. Empreenda.</h2>
+   <p>Uma jornada que começa com informação e pode evoluir com dedicação e aprendizado.</p>
+  </div>
+
+  <div class="steps">
+   <div class="step">
+    <strong>01</strong>
+    <h3>Conheça</h3>
+    <p>Entenda o modelo de negócio, as condições de licenciamento e as soluções disponíveis.</p>
+   </div>
+   <div class="step">
+    <strong>02</strong>
+    <h3>Aprenda</h3>
+    <p>Conheça a capacitação e os recursos de orientação para sua atuação comercial.</p>
+   </div>
+   <div class="step">
+    <strong>03</strong>
+    <h3>Desenvolva</h3>
+    <p>Construa relacionamentos, apresente soluções e desenvolva seu negócio.</p>
+   </div>
+  </div>
+ </div>
+</section>
+
+<section class="light">
+ <div class="container intro">
+  <img src="https://images.unsplash.com/photo-1524758631624-e2822e304c36?auto=format&fit=crop&w=1100&q=85" alt="Escritório moderno">
+  <div>
+   <div class="eyebrow">Uma oportunidade para conhecer</div>
+   <h2>Seu próximo projeto pode começar com uma conversa.</h2>
+   <p>Se você tem vontade de empreender e deseja conhecer novas possibilidades, descubra como funciona o licenciamento iGreen Energy.</p>
+   <p>As condições de participação e os resultados dependem das regras aplicáveis e da atuação de cada licenciado. Não há garantia de ganhos.</p>
+  </div>
+ </div>
+</section>
+
+<section class="light" id="cadastro">
+ <div class="container">
+  <div class="section-title">
+   <div class="eyebrow">Dê o primeiro passo</div>
+   <h2>Quero conhecer a oportunidade iGreen!</h2>
+   <p>Preencha seus dados. Nossa equipe poderá entrar em contato para apresentar a oportunidade.</p>
+  </div>
+
+  <div class="form-area">
+   <h2>Cadastro de interessados</h2>
+   <p>Informe seus dados para iniciar uma conversa pelo WhatsApp.</p>
+
+   <form id="leadForm">
+    <div class="field">
+     <label for="nome">Nome completo</label>
+     <input id="nome" name="nome" type="text" placeholder="Digite seu nome completo" required>
+    </div>
+
+    <div class="field">
+     <label for="cidade">Cidade</label>
+     <input id="cidade" name="cidade" type="text" placeholder="Sua cidade" required>
+    </div>
+
+    <div class="field">
+     <label for="estado">Estado</label>
+     <select id="estado" name="estado" required>
+      <option value="">Selecione seu estado</option>
+      <option>AC</option><option>AL</option><option>AP</option>
+      <option>AM</option><option>BA</option><option>CE</option>
+      <option>DF</option><option>ES</option><option>GO</option>
+      <option>MA</option><option>MT</option><option>MS</option>
+      <option>MG</option><option>PA</option><option>PB</option>
+      <option>PR</option><option>PE</option><option>PI</option>
+      <option>RJ</option><option>RN</option><option>RS</option>
+      <option>RO</option><option>RR</option><option>SC</option>
+      <option>SP</option><option>SE</option><option>TO</option>
+     </select>
+    </div>
+
+    <div class="field">
+     <label for="telefone">Seu WhatsApp</label>
+     <input id="telefone" name="telefone" type="tel" placeholder="(00) 00000-0000" required>
+    </div>
+
+    <div class="field">
+     <label for="interesse">Qual é seu interesse?</label>
+     <select id="interesse" name="interesse" required>
+      <option value="">Selecione uma opção</option>
+      <option>Quero me tornar um licenciado</option>
+      <option>Quero conhecer o modelo de negócio</option>
+      <option>Quero conhecer as soluções iGreen</option>
+      <option>Quero empreender, mas não tenho experiência</option>
+     </select>
+    </div>
+
+    <label class="consent">
+     <input type="checkbox" id="consentimento" required>
+     <span>Autorizo o uso dos dados informados para receber contato sobre a oportunidade iGreen Energy. Li e concordo com essa finalidade.</span>
+    </label>
+
+    <button class="btn" type="submit">ENVIAR MEU CADASTRO PELO WHATSAPP</button>
+
+    <p class="privacy">Seus dados serão incluídos na mensagem que você poderá revisar e enviar pelo WhatsApp.</p>
+   </form>
+  </div>
+ </div>
+</section>
+
+<section class="profile">
+ <div class="container">
+  <div class="eyebrow">Atendimento comercial</div>
+  <h2>Alexandre Alves</h2>
+  <p>Executivo iGreen Energy Brasil</p>
+  <a class="btn" href="https://wa.me/55629933210298?text=Olá Alexandre! Quero conhecer a oportunidade iGreen.">Falar com Alexandre</a>
+ </div>
+</section>
+
+<section>
+ <div class="container banner">
+  <div class="eyebrow">Seu próximo passo</div>
+  <h2>Vamos conversar sobre seu futuro empreendedor?</h2>
+  <p>Conheça a oportunidade, tire suas dúvidas e receba uma apresentação sobre o licenciamento.</p>
+  <a class="btn" href="#cadastro">QUERO CONHECER</a>
+ </div>
+</section>
+
+</main>
+
+<footer>
+ <div class="container">
+  <strong>iGreen Energy Brasil</strong>
+  <p>Empreendedorismo, conexões e desenvolvimento de negócios.</p>
+  <p>Consulte as condições e regras aplicáveis aos serviços e ao licenciamento.</p>
+  <p>© 2026 iGreen Energy Brasil. Todos os direitos reservados.</p>
+ </div>
+</footer>
+
+<a class="whatsapp" href="https://wa.me/55629933210298?text=Olá! Quero conhecer a oportunidade iGreen Energy." target="_blank" rel="noopener">WhatsApp</a>
+
+<script>
+document.getElementById("leadForm").addEventListener("submit",function(event){
+ event.preventDefault();
+
+ const nome=document.getElementById("nome").value.trim();
+ const cidade=document.getElementById("cidade").value.trim();
+ const estado=document.getElementById("estado").value;
+ const telefone=document.getElementById("telefone").value.trim();
+ const interesse=document.getElementById("interesse").value;
+ const consentimento=document.getElementById("consentimento").checked;
+
+ if(!nome || !cidade || !estado || !telefone || !interesse || !consentimento){
+  alert("Por favor, preencha todos os campos e autorize o contato.");
+  return;
+ }
+
+ const mensagem=
+ "Olá Alexandre! Tenho interesse na oportunidade iGreen Energy.%0A%0A"+
+ "Nome: "+encodeURIComponent(nome)+"%0A"+
+ "Cidade: "+encodeURIComponent(cidade)+" - "+encodeURIComponent(estado)+"%0A"+
+ "WhatsApp: "+encodeURIComponent(telefone)+"%0A"+
+ "Interesse: "+encodeURIComponent(interesse);
+
+ const url="https://wa.me/55629933210298?text="+mensagem;
+ window.open(url,"_blank");
+});
+</script>
+
+</body>
+</html>
